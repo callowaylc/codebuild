@@ -7,7 +7,7 @@ phases:
     commands:
       - echo install
       - logger -s install
-      - mkdir -p /tmp/artifacts
+      - mkdir -p artifacts
 
   build:
     commands:
@@ -20,8 +20,8 @@ phases:
     commands:
       - echo post_build
       - logger -s post_build
-      - date -u +'%s' > /tmp/artifacts/finished.txt
+      - date -u +'%s' > artifacts/finished.txt
 
 artifacts:
   files:
-    - /tmp/artifacts
+    - artifacts
