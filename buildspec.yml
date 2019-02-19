@@ -1,0 +1,27 @@
+version: 0.2
+
+run-as: root
+
+phases:
+  install:
+    commands:
+      - echo install
+      - logger -s install
+      - mkdir -p /tmp/artifacts
+
+  build:
+    commands:
+      - echo build
+      - logger -s build
+      - sleep 10
+
+
+  post_build:
+    commands:
+      - echo post_build
+      - logger -s post_build
+      - date -u +'%s' > /tmp/artifacts/finished.txt
+
+artifacts:
+  files:
+    - /tmp/artifacts
